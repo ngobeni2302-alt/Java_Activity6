@@ -148,12 +148,16 @@ unloadRounds++;
 
 2. **`getRentalRate`**
 * **Goal:** Look at an incoming vehicle type text string and return its daily rate.
-* **Logic:** Use a switch expression to match prices: `"Car"` costs `40.0`, `"SUV"` costs `60.0`, and `"Truck"` costs `80.0`. Anything else defaults to `30.0`.
+* **Logic:** Use a switch expression to match prices: `"Car"` costs `40.0`, `"SUV"` costs `60.0`, and `"Truck"` costs `80.0`.
+* Anything else defaults to `30.0`.
 
 
 3. **`calculateInsuranceDiscount`**
 * **Goal:** Determine an insurance discount multiplier based on safe driver parameters.
-* **Logic:** If the driver has an accident history (`hasAccidentHistory` is true), they instantly get `0.0`. If they have a clean record, give them a `0.20` (20%) discount for 5+ years of safe driving, a `0.10` (10%) discount for 2+ years, and `0.0` for anything less.
+* **Logic:** If the driver has an accident history (`hasAccidentHistory` is true), 
+* they instantly get `0.0`. If they have a clean record, 
+* give them a `0.20` (20%) discount for 5+ years of safe driving, 
+* a `0.10` (10%) discount for 2+ years, and `0.0` for anything less.
 
 
 4. **`verifyCargoWeight`**
@@ -163,7 +167,8 @@ unloadRounds++;
 
 5. **`approveDispatch`**
 * **Goal:** Decide whether a transport truck is authorized to leave the garage.
-* **Logic:** Return `true` ONLY if the driver is rested AND the vehicle safety checklist is checked, AND the weather is NOT severe.
+* **Logic:** Return `true` ONLY if the driver is rested AND the vehicle 
+* safety checklist is checked, AND the weather is NOT severe.
         
 
 ### 📁 `ForLoops.java` (Counting & Repeating)
