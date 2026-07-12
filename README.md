@@ -175,12 +175,16 @@ unloadRounds++;
 
 1. **`calculateDepreciation`**
 * **Goal:** Calculate the long-term compound value reduction of a vehicle asset.
-* **Logic:** Use a regular `for` loop to step through a fixed sequence of years. Each year, calculate how much value the car loses based on the rate, and subtract it from the current total value so it compounds over time.
+* **Logic:** Use a regular `for` loop to step through a fixed sequence of years. 
+* Each year, calculate how much value the car loses based on the rate, and subtract 
+* it from the current total value so it compounds over time.
 
 
 2. **`totalFleetCapacity`**
 * **Goal:** Sum up total passenger seat availability across your garage.
-* **Logic:** You are handed an array of capacity numbers. Use a clean **enhanced for loop** (for-each) to read every number inside the array list one by one and accumulate them into a single final sum.
+* **Logic:** You are handed an array of capacity numbers. Use a clean **enhanced for loop** 
+* (for-each) to read every number inside the array list one by one and accumulate them into a 
+* single final sum.
 
 
 3. **`generateIntervalTimeline`**
