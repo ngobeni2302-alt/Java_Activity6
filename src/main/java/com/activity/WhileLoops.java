@@ -5,7 +5,10 @@ public class WhileLoops {
     // Problem 1: Step down fuel resource metrics dynamically
     public int simulateDriveDistance(int totalFuel, int consumptionPerStint) {
         int distanceTraveled = 0;
-        // TODO: While totalFuel >= consumptionPerStint, increment distance by 100 and subtract consumption from fuel
+        while (totalFuel >= consumptionPerStint) {
+            distanceTraveled = distanceTraveled + 100;
+            totalFuel = totalFuel - consumptionPerStint; // Fixed: Deduct fuel to prevent infinite loops
+        }
         return distanceTraveled;
     }
 
@@ -13,28 +16,46 @@ public class WhileLoops {
     public int trackingYearsToProfitTarget(double initialCapital, double targetProfit, double annualYield) {
         int years = 0;
         double currentBalance = initialCapital;
-        // TODO: While currentBalance is less than targetProfit, add interest (currentBalance * annualYield) and increment years
+        while (currentBalance < targetProfit) {
+            currentBalance = currentBalance + (currentBalance * annualYield);
+            years++;
+        }
         return years;
     }
 
     // Problem 3: Algorithmic digit sum isolation
     public int sumOdometerDigits(int odometerValue) {
         int sum = 0;
-        // TODO: Use a while loop with mathematical division (/) and modulo (%) operators to extract and sum every digit
+        while (odometerValue > 0) {
+            sum = sum + (odometerValue % 10);   // Extract the last digit
+            odometerValue = odometerValue / 10; // Discard the last digit
+        }
         return sum;
     }
 
     // Problem 4: Safely drain tank parameters to empty states
     public int drainHydraulicFluid(int currentLevel, int drainageRate) {
         int remaining = currentLevel;
-        // TODO: Use a while loop to subtract drainageRate from remaining until remaining is less than or equal to 0. Return final remaining value (never return negative, return 0 if it drops below).
+        while (remaining > 0) {
+            remaining = remaining - drainageRate;
+        }
+        if (remaining < 0) {
+            remaining = 0; // Normalize negative numbers down to 0
+        }
         return remaining;
     }
 
     // Problem 5: Continuous linear search loop structural match
     public int findFirstAvailableBay(boolean[] garageBays) {
         int index = 0;
-        // TODO: While index is within bounds and garageBays[index] is true (occupied), increment index. Return first index that is false (available). If none found, return -1.
-        return -1;
+        // Stay inside array limits AND keep skipping while the bay is occupied (true)
+        while (index < garageBays.length && garageBays[index]) {
+            index++;
+        }
+        // If index reached the end, no bay was open
+        if (index >= garageBays.length) {
+            return -1;
+        }
+        return index;
     }
 }
